@@ -33,10 +33,10 @@ with open('input.txt', 'r') as myfile:
         myline = myline.rstrip()
         linelist = myline.split(' ')
         popcount = int(linelist[1])
+        slicer = -popcount
+        mapper[linelist[5]].extend(mapper[linelist[3]][slicer:])
         for c in range(popcount):
             crate = mapper[linelist[3]].pop()
-            mapper[linelist[5]].append(crate)
-
 
 for key in mapper:
     print(mapper[key])
